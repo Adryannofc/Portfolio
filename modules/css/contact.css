@@ -1,9 +1,9 @@
 .contact {
     background: url(../../assets/img/Background_Contacts.png) no-repeat center/cover;
-    padding: 128px 120px 200px 120px;
+    padding: 128px 120px 400px 120px;
     position: relative;
     overflow: hidden;
-
+    height: 90vh;
     header {
         display: flex;
         flex-direction: column;
@@ -45,13 +45,45 @@
     background-color: var(--gray-400);
     padding: 1.25rem;
     border-radius: 8px;
-
+    transition: background-color 0.3s ease-in-out;
+    
     span {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 0.5rem;
     }
+
+    &:hover {
+        transition: background-color 0.5s ease;
+
+        span svg path {
+            fill: #fff;
+            transition: stroke 0.3s ease;
+        }
+
+        p {
+            color: var(--gray-100);
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+    }
+}
+
+.linkedin:hover {
+    background-color: #0A66C2;
+}
+
+.instagram:hover {
+    background-color: #E1306C;
+}
+
+.github:hover {
+    background-color: #333333;
+}
+
+.email:hover {
+    background-color: #D44638;
 }
 
 .waves {

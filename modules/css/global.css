@@ -83,3 +83,7 @@ header {
         color: var(--gray-100);
     }
 }
+
+a {
+    text-decoration: none;
+}
