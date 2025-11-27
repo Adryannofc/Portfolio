@@ -25,8 +25,20 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Asap', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Removido scroll reveal JS: garante visibilidade padrão */
+[data-animate],
+[data-animate].animate-in {
+    opacity: 1;
+    transform: none;
 }
 
 h1 {
@@ -73,6 +85,8 @@ header {
     align-items: center;
     gap: .5rem;
     margin-bottom: 3.5rem;
+    animation: fadeInDown 0.8s ease-out;
+
     p {
         font: var(--subtitle);
         color: var(--red);
@@ -84,6 +98,36 @@ header {
     }
 }
 
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 a {
     text-decoration: none;
+}
+
+/* Seleção global (não suporta seletores aninhados dentro) */
+::selection {
+    background-color: var(--green);
+    color: var(--gray-100);
+    text-shadow: 0 0 6px rgba(130, 188, 79, 0.6);
+}
+
+/* Seleção específica para títulos */
+h1::selection {
+    background-color: var(--green);
+    color: var(--gray-100);
+    text-shadow: 0 5px 1px rgb(36, 36, 36), 0 0 10px rgba(187, 114, 233, 0.6);
+}
+
+p::selection, small::selection {
+    font-weight: 600;
 }
